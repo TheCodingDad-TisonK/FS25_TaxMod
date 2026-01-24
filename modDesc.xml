@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modDesc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         descVersion="104"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/NMC-TBone/xml-schema/main/modDesc.xsd">
+
+    <author>TisonK</author>
+    <version>1.0.0.0</version>
+
+    <title>
+        <en>Tax Mod</en>
+        <de>Steuern-Mod</de>
+        <fr>Mod De Taxes</fr>
+        <es>Mod De Impuestos</es>
+        <it>Mod Di Tasse</it>
+        <pl>Mod Podatkowy</pl>
+    </title>
+
+    <description>
+        <en><![CDATA[
+Adds realistic tax system to your farm.
+
+Features:
+• Daily tax deductions based on farm balance
+• Monthly tax returns (percentage of taxes paid)
+• Three tax rate levels: Low (1%), Medium (2%), High (3%)
+• Configurable minimum balance threshold
+• Tax history and statistics tracking
+• Professional in-game notifications
+• Fully configurable via console commands
+• Multiplayer compatible
+• Settings saved per savegame
+• Type 'tax' in console for commands
+]]></en>
+
+        <de><![CDATA[
+Fügt ein realistisches Steuersystem zu Ihrer Farm hinzu.
+
+Funktionen:
+• Tägliche Steuerabzüge basierend auf dem Farmguthaben
+• Monatliche Steuerrückzahlungen (Prozentsatz der gezahlten Steuern)
+• Drei Steuersatzstufen: Niedrig (1%), Mittel (2%), Hoch (3%)
+• Konfigurierbare Mindestguthabenschwelle
+• Steuerverlauf und Statistikverfolgung
+• Professionelle In-Game-Benachrichtigungen
+• Vollständig über Konsolenbefehle konfigurierbar
+• Multiplayer-kompatibel
+• Einstellungen pro Spielstand gespeichert
+• Geben Sie 'tax' in der Konsole für Befehle ein
+]]></de>
+
+        <fr><![CDATA[
+Ajoute un système de taxes réaliste à votre ferme.
+
+Fonctionnalités :
+• Déductions fiscales quotidiennes basées sur le solde de la ferme
+• Remboursements d'impôts mensuels (pourcentage des taxes payées)
+• Trois niveaux de taux d'imposition : Faible (1%), Moyen (2%), Élevé (3%)
+• Seuil de solde minimum configurable
+• Suivi de l'historique et des statistiques fiscales
+• Notifications professionnelles en jeu
+• Entièrement configurable via des commandes console
+• Compatible multijoueur
+• Paramètres enregistrés par partie
+• Tapez 'tax' dans la console pour les commandes
+]]></fr>
+
+        <es><![CDATA[
+Añade un sistema de impuestos realista a tu granja.
+
+Características:
+• Deducciones fiscales diarias basadas en el saldo de la granja
+• Devoluciones de impuestos mensuales (porcentaje de impuestos pagados)
+• Tres niveles de tasa impositiva: Baja (1%), Media (2%), Alta (3%)
+• Umbral de saldo mínimo configurable
+• Seguimiento de historial y estadísticas fiscales
+• Notificaciones profesionales en el juego
+• Totalmente configurable mediante comandos de consola
+• Compatible con multijugador
+• Configuraciones guardadas por partida
+• Escribe 'tax' en la consola para comandos
+]]></es>
+
+        <it><![CDATA[
+Aggiunge un sistema fiscale realistico alla tua fattoria.
+
+Caratteristiche:
+• Detrazioni fiscali giornaliere basate sul saldo della fattoria
+• Restituzioni fiscali mensili (percentuale delle tasse pagate)
+• Tre livelli di aliquota fiscale: Bassa (1%), Media (2%), Alta (3%)
+• Soglia di saldo minimo configurabile
+• Monitoraggio della cronologia e delle statistiche fiscali
+• Notifiche professionali in gioco
+• Completamente configurabile tramite comandi console
+• Compatibile con il multiplayer
+• Impostazioni salvate per partita
+• Digita 'tax' nella console per i comandi
+]]></it>
+
+        <pl><![CDATA[
+Dodaje realistyczny system podatkowy do Twojej farmy.
+
+Funkcje:
+• Codzienne odliczenia podatkowe na podstawie salda farmy
+• Miesięczne zwroty podatków (procent zapłaconych podatków)
+• Trzy poziomy stawek podatkowych: Niski (1%), Średni (2%), Wysoki (3%)
+• Konfigurowalny próg minimalnego salda
+• Śledzenie historii i statystyk podatkowych
+• Profesjonalne powiadomienia w grze
+• W pełni konfigurowalne za pomocą komend konsoli
+• Zgodny z trybem wieloosobowym
+• Ustawienia zapisywane per zapis gry
+• Wpisz 'tax' w konsoli dla komend
+]]></pl>
+    </description>
+
+    <category>gameplay</category>
+
+    <iconFilename>icon_FS25_TaxMod.dds</iconFilename>
+
+    <multiplayer supported="true"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="main.lua"/>
+    </extraSourceFiles>
+
+</modDesc>
