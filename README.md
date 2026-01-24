@@ -45,9 +45,7 @@ This mod is fully configurable via **console commands** and automatically saves 
 ## 🚀 Installation
 
 1. Download the mod `.zip`
-2. Place it in:
-
-Documents/My Games/FarmingSimulator2025/mods
+2. Place it in: Documents/My Games/FarmingSimulator2025/mods
 ---
 
 ## 🔄 How It Works
