@@ -27,6 +27,7 @@ local settings = {
     showStatistics = true,
     debugLevel = 1
 }
+FS25TaxMod.settings = settings  -- cross-mod bridge: expose via g_TaxManager.settings
 
 local TAX_RATE_VALUES = {
     low = 0.01,      -- 1%
@@ -44,6 +45,7 @@ local stats = {
     daysTaxed = 0,
     monthsReturned = 0
 }
+FS25TaxMod.stats = stats  -- cross-mod bridge: expose via g_TaxManager.stats
 
 -- =====================
 -- INTERNAL STATE
@@ -674,6 +676,10 @@ end
 -- MOD REGISTRATION
 -- =====================
 addModEventListener(FS25TaxMod)
+
+-- Cross-mod bridge: export to shared global table so other mods (e.g. FarmTablet)
+-- can detect and read this mod via g_TaxManager.settings / g_TaxManager.stats
+getfenv(0)["g_TaxManager"] = FS25TaxMod
 
 log("========================================")
 log("     FS25 Tax Mod v1.0.0.0 LOADED      ")
