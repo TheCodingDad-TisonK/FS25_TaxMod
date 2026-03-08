@@ -121,6 +121,117 @@ Funkcje:
 
     <extraSourceFiles>
         <sourceFile filename="main.lua"/>
+        <sourceFile filename="src/settings/UIHelper.lua"/>
+        <sourceFile filename="src/settings/SettingsUI.lua"/>
+        <sourceFile filename="src/ui/TaxHUD.lua"/>
     </extraSourceFiles>
+
+    <l10n>
+        <!-- Section Header -->
+        <text name="tm_section">
+            <en><![CDATA[Tax Mod]]></en>
+            <de><![CDATA[Steuer-Mod]]></de>
+            <fr><![CDATA[Mod de Taxes]]></fr>
+            <es><![CDATA[Mod de Impuestos]]></es>
+            <it><![CDATA[Mod Fiscale]]></it>
+            <pl><![CDATA[Mod Podatkowy]]></pl>
+        </text>
+
+        <!-- Enable -->
+        <text name="tm_enabled_short">
+            <en><![CDATA[Enable Tax Mod]]></en>
+            <de><![CDATA[Steuer-Mod aktivieren]]></de>
+            <fr><![CDATA[Activer le Mod de Taxes]]></fr>
+            <es><![CDATA[Activar Mod de Impuestos]]></es>
+            <it><![CDATA[Attiva Mod Fiscale]]></it>
+            <pl><![CDATA[Włącz Mod Podatkowy]]></pl>
+        </text>
+        <text name="tm_enabled_long">
+            <en><![CDATA[Enable or disable daily tax deductions and monthly returns]]></en>
+            <de><![CDATA[Tägliche Steuerabzüge und monatliche Rückerstattungen ein-/ausschalten]]></de>
+            <fr><![CDATA[Activer ou désactiver les déductions fiscales quotidiennes et les remboursements mensuels]]></fr>
+            <es><![CDATA[Activar o desactivar las deducciones fiscales diarias y las devoluciones mensuales]]></es>
+            <it><![CDATA[Attiva o disattiva le detrazioni fiscali giornaliere e i rimborsi mensili]]></it>
+            <pl><![CDATA[Włącz lub wyłącz codzienne odliczenia podatkowe i miesięczne zwroty]]></pl>
+        </text>
+
+        <!-- Tax Rate -->
+        <text name="tm_taxrate_short">
+            <en><![CDATA[Tax Rate]]></en>
+            <de><![CDATA[Steuersatz]]></de>
+            <fr><![CDATA[Taux d'imposition]]></fr>
+            <es><![CDATA[Tasa impositiva]]></es>
+            <it><![CDATA[Aliquota fiscale]]></it>
+            <pl><![CDATA[Stawka podatkowa]]></pl>
+        </text>
+        <text name="tm_taxrate_long">
+            <en><![CDATA[Daily tax rate applied to your farm balance: Low=1%, Medium=2%, High=3%]]></en>
+            <de><![CDATA[Täglicher Steuersatz auf Ihr Farmguthaben: Niedrig=1%, Mittel=2%, Hoch=3%]]></de>
+            <fr><![CDATA[Taux d'imposition quotidien appliqué à votre solde: Faible=1%, Moyen=2%, Élevé=3%]]></fr>
+            <es><![CDATA[Tasa impositiva diaria sobre el saldo de tu granja: Baja=1%, Media=2%, Alta=3%]]></es>
+            <it><![CDATA[Aliquota fiscale giornaliera sul saldo della fattoria: Bassa=1%, Media=2%, Alta=3%]]></it>
+            <pl><![CDATA[Dzienna stawka podatkowa od salda farmy: Niska=1%, Średnia=2%, Wysoka=3%]]></pl>
+        </text>
+        <text name="tm_taxrate_1"><en><![CDATA[Low (1%)]]></en><de><![CDATA[Niedrig (1%)]]></de><fr><![CDATA[Faible (1%)]]></fr><es><![CDATA[Baja (1%)]]></es><it><![CDATA[Bassa (1%)]]></it><pl><![CDATA[Niska (1%)]]></pl></text>
+        <text name="tm_taxrate_2"><en><![CDATA[Medium (2%)]]></en><de><![CDATA[Mittel (2%)]]></de><fr><![CDATA[Moyen (2%)]]></fr><es><![CDATA[Media (2%)]]></es><it><![CDATA[Media (2%)]]></it><pl><![CDATA[Średnia (2%)]]></pl></text>
+        <text name="tm_taxrate_3"><en><![CDATA[High (3%)]]></en><de><![CDATA[Hoch (3%)]]></de><fr><![CDATA[Élevé (3%)]]></fr><es><![CDATA[Alta (3%)]]></es><it><![CDATA[Alta (3%)]]></it><pl><![CDATA[Wysoka (3%)]]></pl></text>
+
+        <!-- Return Percentage -->
+        <text name="tm_return_short">
+            <en><![CDATA[Tax Return %]]></en>
+            <de><![CDATA[Steuerrückerstattung %]]></de>
+            <fr><![CDATA[Remboursement fiscal %]]></fr>
+            <es><![CDATA[% Devolución de impuestos]]></es>
+            <it><![CDATA[% Rimborso fiscale]]></it>
+            <pl><![CDATA[% Zwrotu podatku]]></pl>
+        </text>
+        <text name="tm_return_long">
+            <en><![CDATA[Percentage of monthly taxes returned at the start of each new month: Low=10%, Medium=20%, High=30%]]></en>
+            <de><![CDATA[Prozentsatz der monatlichen Steuern, der zurückerstattet wird: Niedrig=10%, Mittel=20%, Hoch=30%]]></de>
+            <fr><![CDATA[Pourcentage des taxes mensuelles remboursées: Faible=10%, Moyen=20%, Élevé=30%]]></fr>
+            <es><![CDATA[Porcentaje de impuestos mensuales devueltos: Baja=10%, Media=20%, Alta=30%]]></es>
+            <it><![CDATA[Percentuale delle tasse mensili rimborsate: Bassa=10%, Media=20%, Alta=30%]]></it>
+            <pl><![CDATA[Procent miesięcznych podatków zwracanych: Niski=10%, Średni=20%, Wysoki=30%]]></pl>
+        </text>
+        <text name="tm_return_1"><en><![CDATA[Low (10%)]]></en><de><![CDATA[Niedrig (10%)]]></de><fr><![CDATA[Faible (10%)]]></fr><es><![CDATA[Baja (10%)]]></es><it><![CDATA[Bassa (10%)]]></it><pl><![CDATA[Niski (10%)]]></pl></text>
+        <text name="tm_return_2"><en><![CDATA[Medium (20%)]]></en><de><![CDATA[Mittel (20%)]]></de><fr><![CDATA[Moyen (20%)]]></fr><es><![CDATA[Media (20%)]]></es><it><![CDATA[Media (20%)]]></it><pl><![CDATA[Średni (20%)]]></pl></text>
+        <text name="tm_return_3"><en><![CDATA[High (30%)]]></en><de><![CDATA[Hoch (30%)]]></de><fr><![CDATA[Élevé (30%)]]></fr><es><![CDATA[Alta (30%)]]></es><it><![CDATA[Alta (30%)]]></it><pl><![CDATA[Wysoki (30%)]]></pl></text>
+
+        <!-- Notifications -->
+        <text name="tm_notifications_short">
+            <en><![CDATA[Notifications]]></en>
+            <de><![CDATA[Benachrichtigungen]]></de>
+            <fr><![CDATA[Notifications]]></fr>
+            <es><![CDATA[Notificaciones]]></es>
+            <it><![CDATA[Notifiche]]></it>
+            <pl><![CDATA[Powiadomienia]]></pl>
+        </text>
+        <text name="tm_notifications_long">
+            <en><![CDATA[Show in-game notifications when taxes are deducted or returns are paid]]></en>
+            <de><![CDATA[In-Game-Benachrichtigungen anzeigen, wenn Steuern abgezogen oder Rückerstattungen gezahlt werden]]></de>
+            <fr><![CDATA[Afficher les notifications en jeu lors des déductions fiscales ou des remboursements]]></fr>
+            <es><![CDATA[Mostrar notificaciones en el juego cuando se deducen impuestos o se pagan devoluciones]]></es>
+            <it><![CDATA[Mostra notifiche in gioco quando vengono detratte le tasse o pagati i rimborsi]]></it>
+            <pl><![CDATA[Pokazuj powiadomienia w grze gdy podatki są odliczane lub zwracane]]></pl>
+        </text>
+
+        <!-- Show HUD -->
+        <text name="tm_show_hud_short">
+            <en><![CDATA[Show Tax HUD]]></en>
+            <de><![CDATA[Steuer-HUD anzeigen]]></de>
+            <fr><![CDATA[Afficher le HUD fiscal]]></fr>
+            <es><![CDATA[Mostrar HUD de impuestos]]></es>
+            <it><![CDATA[Mostra HUD fiscale]]></it>
+            <pl><![CDATA[Pokaż HUD podatkowy]]></pl>
+        </text>
+        <text name="tm_show_hud_long">
+            <en><![CDATA[Show the Tax HUD overlay with current rate, statistics and recent activity (toggle with taxToggleHUD command)]]></en>
+            <de><![CDATA[Tax-HUD mit aktuellem Steuersatz, Statistiken und letzten Aktivitäten anzeigen (mit taxToggleHUD umschalten)]]></de>
+            <fr><![CDATA[Afficher l'HUD fiscal avec le taux actuel, les statistiques et l'activité récente (basculer avec taxToggleHUD)]]></fr>
+            <es><![CDATA[Mostrar el HUD fiscal con la tasa actual, estadísticas y actividad reciente (alternar con taxToggleHUD)]]></es>
+            <it><![CDATA[Mostra l'HUD fiscale con aliquota corrente, statistiche e attività recente (attiva/disattiva con taxToggleHUD)]]></it>
+            <pl><![CDATA[Pokaż HUD podatkowy z bieżącą stawką, statystykami i ostatnią aktywnością (przełącz komendą taxToggleHUD)]]></pl>
+        </text>
+    </l10n>
 
 </modDesc>
