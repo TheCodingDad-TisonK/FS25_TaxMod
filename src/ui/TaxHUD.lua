@@ -1,5 +1,5 @@
 -- =========================================================
--- FS25 Tax Mod (version 1.0.0.0)
+-- FS25 Tax Mod (version 1.1.0.0)
 -- =========================================================
 -- Tax HUD Overlay
 -- Displays tax status, current rate, and history.
