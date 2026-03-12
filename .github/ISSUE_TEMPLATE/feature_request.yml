@@ -1,0 +1,60 @@
+name: Feature Request
+description: Suggest a new feature or improvement.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before opening this request:**
+        - Check the roadmap in the README — your idea may already be planned.
+        - Check open issues to avoid duplicates.
+        - Keep requests scoped and specific. "Improve taxes" will be closed. "Allow tax rate to be configured per income category" is actionable.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the situation or frustration this would address. Focus on the problem, not the solution.
+      placeholder: "I want to set different tax rates for crop income vs. animal product income."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe what you want to happen. Be specific about the behavior, not just the concept.
+      placeholder: "Add per-category tax rate settings in the mod configuration panel."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you thought of other ways to solve this? Why are they not good enough?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Which part of the mod does this relate to?
+      options:
+        - Tax Calculation
+        - Tax Display / HUD
+        - Tax Categories
+        - Settings / Configuration
+        - Multiplayer
+        - Mod Compatibility
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything Else?
+      description: Screenshots, mockups, references to how other mods handle this, or any extra context.
+    validations:
+      required: false

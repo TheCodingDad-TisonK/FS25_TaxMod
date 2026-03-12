@@ -1,5 +1,5 @@
 -- =========================================================
--- FS25 Tax Mod (version 1.0.0.0)
+-- FS25 Tax Mod (version 1.1.0.0)
 -- =========================================================
 -- Daily tax deductions with monthly returns
 -- =========================================================
@@ -16,7 +16,7 @@ source(modDirectory .. "src/ui/TaxHUD.lua")
 FS25TaxMod = {}
 FS25TaxMod.modDir  = modDirectory
 FS25TaxMod.modName = modName
-FS25TaxMod.version = "1.0.0.0"
+FS25TaxMod.version = "1.1.0.0"
 FS25TaxMod.Debug   = false
 
 local settings = {
@@ -431,7 +431,7 @@ function taxToggleHUD()   FS25TaxMod:consoleTaxHUD()        end
 function taxDebug(l)      FS25TaxMod:consoleTaxDebug(l)     end
 
 print("========================================")
-print("     FS25 Tax Mod v1.0.0.0 LOADED      ")
+print("     FS25 Tax Mod v1.1.0.0 LOADED      ")
 print("     Author: TisonK                     ")
 print("     Type 'tax' in console for help     ")
 print("========================================")

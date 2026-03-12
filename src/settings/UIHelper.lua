@@ -1,5 +1,5 @@
 -- =========================================================
--- FS25 Tax Mod (version 1.0.0.0)
+-- FS25 Tax Mod (version 1.1.0.0)
 -- =========================================================
 -- UI Helper - creates settings rows in the General Settings page.
 -- Pattern copied from FS25_IncomeMod by TisonK.
