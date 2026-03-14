@@ -1,5 +1,5 @@
 -- =========================================================
--- FS25 Tax Mod (version 1.1.0.0)
+-- FS25 Tax Mod (version 1.1.1.0)
 -- =========================================================
 -- Daily tax deductions with monthly returns
 -- =========================================================
@@ -16,7 +16,7 @@ source(modDirectory .. "src/ui/TaxHUD.lua")
 FS25TaxMod = {}
 FS25TaxMod.modDir  = modDirectory
 FS25TaxMod.modName = modName
-FS25TaxMod.version = "1.1.0.0"
+FS25TaxMod.version = "1.1.1.0"
 FS25TaxMod.Debug   = false
 
 local settings = {
@@ -323,6 +323,42 @@ local function onLoad(mission)
         mission.taxManager = FS25TaxMod
         log("Tax Mod v" .. FS25TaxMod.version .. ": Initialized")
     end
+
+    -- Register T key to toggle HUD via PlayerInputComponent hook (race-condition-safe)
+    if mission:getIsClient() and PlayerInputComponent and PlayerInputComponent.registerActionEvents then
+        local original = PlayerInputComponent.registerActionEvents
+        FS25TaxMod._inputHookOriginal = original
+        PlayerInputComponent.registerActionEvents = function(inputComponent, ...)
+            original(inputComponent, ...)
+            if not (inputComponent.player and inputComponent.player.isOwner) then return end
+            if FS25TaxMod.toggleHUDEventId then return end
+            if not taxHUD then return end
+
+            g_inputBinding:beginActionEventsModification(PlayerInputComponent.INPUT_CONTEXT_NAME)
+            local ok, id = g_inputBinding:registerActionEvent(
+                InputAction.TM_TOGGLE_HUD,
+                FS25TaxMod,
+                FS25TaxMod.onToggleHUDInput,
+                false, true, false, true
+            )
+            if ok and id then
+                FS25TaxMod.toggleHUDEventId = id
+                g_inputBinding:setActionEventTextPriority(id, GS_PRIO_NORMAL)
+                log("HUD toggle (T) registered", 2)
+            else
+                log("HUD toggle (T) registration failed", 1)
+            end
+            g_inputBinding:endActionEventsModification()
+        end
+    end
+end
+
+function FS25TaxMod:onToggleHUDInput()
+    if taxHUD then
+        taxHUD:toggleVisibility()
+        settings.showHUD = taxHUD.visible
+        saveSettings()
+    end
 end
 
 local function onMissionLoaded(mission, node)
@@ -374,6 +410,14 @@ local function onUnload()
     FS25TaxMod.taxSettingsUI = nil
     if FS25TaxMod.updateable and g_currentMission then
         g_currentMission:removeUpdateable(FS25TaxMod.updateable)
+    end
+    if FS25TaxMod.toggleHUDEventId and g_inputBinding then
+        g_inputBinding:removeActionEvent(FS25TaxMod.toggleHUDEventId)
+        FS25TaxMod.toggleHUDEventId = nil
+    end
+    if FS25TaxMod._inputHookOriginal and PlayerInputComponent then
+        PlayerInputComponent.registerActionEvents = FS25TaxMod._inputHookOriginal
+        FS25TaxMod._inputHookOriginal = nil
     end
     saveSettings()
     isInitialized = false
@@ -431,7 +475,7 @@ function taxToggleHUD()   FS25TaxMod:consoleTaxHUD()        end
 function taxDebug(l)      FS25TaxMod:consoleTaxDebug(l)     end
 
 print("========================================")
-print("     FS25 Tax Mod v1.1.0.0 LOADED      ")
+print("     FS25 Tax Mod v1.1.1.0 LOADED      ")
 print("     Author: TisonK                     ")
 print("     Type 'tax' in console for help     ")
 print("========================================")
