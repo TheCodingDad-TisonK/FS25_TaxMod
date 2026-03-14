@@ -1,5 +1,5 @@
 -- =========================================================
--- FS25 Tax Mod (version 1.1.1.0)
+-- FS25 Tax Mod (version 1.1.2.0)
 -- =========================================================
 -- Daily tax deductions with monthly returns
 -- =========================================================
@@ -16,7 +16,7 @@ source(modDirectory .. "src/ui/TaxHUD.lua")
 FS25TaxMod = {}
 FS25TaxMod.modDir  = modDirectory
 FS25TaxMod.modName = modName
-FS25TaxMod.version = "1.1.1.0"
+FS25TaxMod.version = "1.1.2.0"
 FS25TaxMod.Debug   = false
 
 local settings = {
@@ -402,6 +402,7 @@ end
 local function onUnload()
     if taxHUD then
         if taxHUD.editMode then taxHUD:exitEditMode() end
+        taxHUD:saveLayout()
         taxHUD:delete()
         taxHUD = nil
         FS25TaxMod.taxHUD = nil
@@ -440,6 +441,7 @@ end)
 
 Mission00.saveToXMLFile = Utils.appendedFunction(Mission00.saveToXMLFile, function(mission, xmlFilename)
     saveSettings()
+    if taxHUD then taxHUD:saveLayout() end
 end)
 
 local taxMouseHandler = {}
@@ -475,7 +477,7 @@ function taxToggleHUD()   FS25TaxMod:consoleTaxHUD()        end
 function taxDebug(l)      FS25TaxMod:consoleTaxDebug(l)     end
 
 print("========================================")
-print("     FS25 Tax Mod v1.1.1.0 LOADED      ")
+print("     FS25 Tax Mod v1.1.2.0 LOADED      ")
 print("     Author: TisonK                     ")
 print("     Type 'tax' in console for help     ")
 print("========================================")
