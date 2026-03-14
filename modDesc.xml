@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/NMC-TBone/xml-schema/main/modDesc.xsd">
 
     <author>TisonK</author>
-    <version>1.1.0.0</version>
+    <version>1.1.1.0</version>
 
     <title>
         <en>Tax Mod</en>
@@ -225,13 +225,33 @@ Funkcje:
             <pl><![CDATA[Pokaż HUD podatkowy]]></pl>
         </text>
         <text name="tm_show_hud_long">
-            <en><![CDATA[Show the Tax HUD overlay with current rate, statistics and recent activity (toggle with taxToggleHUD command)]]></en>
-            <de><![CDATA[Tax-HUD mit aktuellem Steuersatz, Statistiken und letzten Aktivitäten anzeigen (mit taxToggleHUD umschalten)]]></de>
-            <fr><![CDATA[Afficher l'HUD fiscal avec le taux actuel, les statistiques et l'activité récente (basculer avec taxToggleHUD)]]></fr>
-            <es><![CDATA[Mostrar el HUD fiscal con la tasa actual, estadísticas y actividad reciente (alternar con taxToggleHUD)]]></es>
-            <it><![CDATA[Mostra l'HUD fiscale con aliquota corrente, statistiche e attività recente (attiva/disattiva con taxToggleHUD)]]></it>
-            <pl><![CDATA[Pokaż HUD podatkowy z bieżącą stawką, statystykami i ostatnią aktywnością (przełącz komendą taxToggleHUD)]]></pl>
+            <en><![CDATA[Show the Tax HUD overlay with current rate, statistics and recent activity (toggle with T key)]]></en>
+            <de><![CDATA[Tax-HUD mit aktuellem Steuersatz, Statistiken und letzten Aktivitäten anzeigen (mit T umschalten)]]></de>
+            <fr><![CDATA[Afficher l'HUD fiscal avec le taux actuel, les statistiques et l'activité récente (basculer avec T)]]></fr>
+            <es><![CDATA[Mostrar el HUD fiscal con la tasa actual, estadísticas y actividad reciente (alternar con T)]]></es>
+            <it><![CDATA[Mostra l'HUD fiscale con aliquota corrente, statistiche e attività recente (attiva/disattiva con T)]]></it>
+            <pl><![CDATA[Pokaż HUD podatkowy z bieżącą stawką, statystykami i ostatnią aktywnością (przełącz klawiszem T)]]></pl>
+        </text>
+
+        <!-- HUD toggle key binding display name -->
+        <text name="input_TM_TOGGLE_HUD">
+            <en><![CDATA[Toggle Tax HUD]]></en>
+            <de><![CDATA[Steuer-HUD umschalten]]></de>
+            <fr><![CDATA[Basculer l'HUD fiscal]]></fr>
+            <es><![CDATA[Alternar HUD de impuestos]]></es>
+            <it><![CDATA[Attiva/disattiva HUD fiscale]]></it>
+            <pl><![CDATA[Przełącz HUD podatkowy]]></pl>
         </text>
     </l10n>
+
+    <actions>
+        <action name="TM_TOGGLE_HUD" category="ONFOOT" />
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="TM_TOGGLE_HUD">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_T" />
+        </actionBinding>
+    </inputBinding>
 
 </modDesc>
