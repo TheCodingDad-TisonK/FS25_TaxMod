@@ -377,7 +377,7 @@ local function onMissionLoaded(mission, node)
 
     if taxHUD then
         taxHUD:loadLayout()
-        taxHUD.visible = settings.showHUD
+        settings.showHUD = taxHUD.visible  -- sync setting to what was actually saved
     end
 
     if settings.showNotification then
