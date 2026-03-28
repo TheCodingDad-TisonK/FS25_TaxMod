@@ -381,8 +381,8 @@ function TaxHUD:drawPanel()
 
     local histCount = math.min(#self.taxHistory, TaxHUD.MAX_HISTORY_ROWS)
 
-    -- Row count: title + rate + min-balance + annual-accumulated + projected + next-event + totals(2) + history header + hist rows + hint
-    local nRows = 8 + math.max(histCount - 1, 0)
+    -- Row count: title + rate + min-balance + annual-accumulated + projected + next-event + totals(2) + history-header + hist-rows + hint = 10 fixed + max(histCount,1) variable
+    local nRows = 11 + math.max(histCount - 1, 0)
     local nDividers = 3
     local bgH = pad * 2 + nRows * lh + nDividers * (0.004 * sc)
     local bgX = x - pad
