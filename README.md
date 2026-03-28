@@ -1,7 +1,7 @@
 <div align="center">
 
 # 💰 FS25 Tax Mod
-### *Daily Tax Deductions with Monthly Returns*
+### *Realistic Annual Farm Taxation*
 
 [![Downloads](https://img.shields.io/github/downloads/TheCodingDad-TisonK/FS25_TaxMod/total?style=for-the-badge&logo=github&color=4caf50&logoColor=white)](https://github.com/TheCodingDad-TisonK/FS25_TaxMod/releases)
 [![Release](https://img.shields.io/github/v/release/TheCodingDad-TisonK/FS25_TaxMod?style=for-the-badge&logo=tag&color=76c442&logoColor=white)](https://github.com/TheCodingDad-TisonK/FS25_TaxMod/releases/latest)
@@ -12,24 +12,72 @@
 
 <br>
 
-**Running a farm means paying taxes. This mod makes sure you do.**
+**Running a farm means paying taxes — once a year, just like real life.**
 
-A daily tax is deducted from your farm balance based on your chosen rate (low / medium / high). At the end of each month, a configurable percentage is returned — simulating government agricultural subsidies or tax rebates. Falls below your minimum balance? Tax is skipped for the day.
+Taxes accumulate silently throughout the year and are collected each March. In December you get an advance warning so you can plan your spending before year-end. Falls below your minimum balance? Tax is skipped.
 
-`Singleplayer` • `Persistent saves` • `Console commands`
+`Singleplayer` • `Multiplayer` • `Persistent saves` • `Console commands`
 
 </div>
 
 ---
 
+## How It Works
+
+Real farm businesses don't pay tax on every transaction — they settle up annually. This mod works the same way:
+
+1. **Throughout the year** — income-based tax accumulates in the background. Nothing is deducted yet.
+2. **December** — a notification shows your estimated tax bill, what percentage of your current balance it represents, and the total accumulated so far. Time to decide whether to spend more before year-end.
+3. **March** — the full bill is collected. The amount is `accumulated × annual rate`.
+
+Your minimum balance is always protected — if the tax payment would drop you below it, the payment is skipped for that year.
+
+---
+
 ## Features
 
-- **Daily tax deductions** at low (1%), medium (2%), or high (3%) rate
-- **Monthly tax return** — configurable percentage paid back at month end
-- **Minimum balance protection** — tax is skipped if your balance drops below the threshold
-- **In-game notifications** for every deduction and return
-- **Persistent statistics** — total taxes paid, returned, days taxed, and more
+- **Annual tax cycle** — accumulates daily, paid once in March
+- **December advisory** — estimated bill, % of balance, and accumulated total shown in advance
+- **Configurable annual tax rate** — Low (2%), Medium (5%), or High (10%)
+- **Transaction tax rate** — separate Low (1%), Medium (2%), or High (3%) rate on daily income that feeds the accumulator
+- **Minimum balance protection** — payment is skipped if your balance is too low
+- **HUD overlay** — always-visible panel showing current rate, annual accumulated, estimated March payment, and a countdown to the next tax event
+- **In-game notifications** for payment and advisory events
+- **Persistent statistics** — total taxes paid, returned, and running annual accumulation survive saves
 - **Full console control** — adjust everything without leaving the game
+
+---
+
+## HUD
+
+The Tax HUD shows at a glance:
+
+| Row | Description |
+|-----|-------------|
+| TAX MOD | Status (ON / OFF) |
+| Rate | Current transaction rate and annual rate |
+| Min balance | Your protected floor |
+| Annual accumulated | Tax built up so far this year |
+| Est. March payment | Projected bill (accumulated × annual rate) in orange |
+| Next tax event | Months until payment (red) or advisory (blue) |
+| Total paid / returned | Running lifetime totals |
+| Recent Activity | Last few tax events |
+
+Toggle the HUD with **T**. Right-click to drag or resize it.
+
+---
+
+## Settings
+
+Access via **ESC → Settings → General** (scroll to the Tax Mod section):
+
+| Setting | Options | Default |
+|---------|---------|---------|
+| Enable Mod | Yes / No | Yes |
+| Tax Rate | Low (1%) / Medium (2%) / High (3%) | Medium |
+| Annual Tax Rate | Low (2%) / Medium (5%) / High (10%) | Medium |
+| Notifications | Yes / No | Yes |
+| Show HUD | Yes / No | Yes |
 
 ---
 
@@ -42,8 +90,8 @@ Type `tax` in the developer console (`~` key) for the full list.
 | `tax` | Show all commands |
 | `taxStatus` | Show current settings and statistics |
 | `taxEnable` / `taxDisable` | Toggle tax system |
-| `taxRate low\|medium\|high` | Set tax rate |
-| `taxReturn [0-100]` | Set monthly return percentage |
+| `taxRate low\|medium\|high` | Set transaction tax rate |
+| `taxAnnualRate low\|medium\|high\|[0.01-0.30]` | Set annual tax rate (e.g. `taxAnnualRate 0.08` for 8%) |
 | `taxMinimum [amount]` | Set minimum balance threshold |
 | `taxStatistics` | Show running tax statistics |
 | `taxSimulate` | Simulate a tax cycle immediately |
