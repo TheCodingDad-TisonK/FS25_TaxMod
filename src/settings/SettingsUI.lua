@@ -69,23 +69,23 @@ function TaxSettingsUI:inject()
         end
     )
 
-    -- ── Return Percentage: Low (10%) / Medium (20%) / High (30%) ──
-    local returnValues = { 10, 20, 30 }
-    local returnIndex = 2  -- default: Medium (20%)
-    for i, v in ipairs(returnValues) do
-        if v == settings.returnPercentage then returnIndex = i end
+    -- ── Annual Tax Rate: Low (2%) / Medium (5%) / High (10%) ──
+    local annualRateValues = { 0.02, 0.05, 0.10 }
+    local annualRateIndex = 2  -- default: Medium (5%)
+    for i, v in ipairs(annualRateValues) do
+        if math.abs(v - settings.annualTaxRate) < 0.001 then annualRateIndex = i end
     end
-    self.returnOption = TaxUIHelper.createMultiOption(
-        layout, "tm_return", "tm_return",
+    self.annualRateOption = TaxUIHelper.createMultiOption(
+        layout, "tm_annualrate", "tm_annualrate",
         {
-            TaxUIHelper.getText("tm_return_1"),
-            TaxUIHelper.getText("tm_return_2"),
-            TaxUIHelper.getText("tm_return_3"),
+            TaxUIHelper.getText("tm_annualrate_1"),
+            TaxUIHelper.getText("tm_annualrate_2"),
+            TaxUIHelper.getText("tm_annualrate_3"),
         },
-        returnIndex,
+        annualRateIndex,
         function(idx)
-            local values = { 10, 20, 30 }
-            settings.returnPercentage = values[idx] or 20
+            local values = { 0.02, 0.05, 0.10 }
+            settings.annualTaxRate = values[idx] or 0.05
             self.taxMod:saveSettings()
         end
     )
@@ -148,10 +148,10 @@ function TaxSettingsUI:refreshUI()
     local rateIndex = ({ low = 1, medium = 2, high = 3 })[settings.taxRate] or 2
     setMulti(self.taxRateOption, rateIndex)
 
-    local returnValues = { 10, 20, 30 }
-    local returnIndex = 2
-    for i, v in ipairs(returnValues) do
-        if v == settings.returnPercentage then returnIndex = i end
+    local annualRateValues = { 0.02, 0.05, 0.10 }
+    local annualRateIndex = 2
+    for i, v in ipairs(annualRateValues) do
+        if math.abs(v - settings.annualTaxRate) < 0.001 then annualRateIndex = i end
     end
-    setMulti(self.returnOption, returnIndex)
+    setMulti(self.annualRateOption, annualRateIndex)
 end

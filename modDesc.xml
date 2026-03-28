@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/NMC-TBone/xml-schema/main/modDesc.xsd">
 
     <author>TisonK</author>
-    <version>1.1.2.0</version>
+    <version>1.1.3.0</version>
 
     <title>
         <en>Tax Mod</en>
@@ -176,7 +176,28 @@ Funkcje:
         <text name="tm_taxrate_2"><en><![CDATA[Medium (2%)]]></en><de><![CDATA[Mittel (2%)]]></de><fr><![CDATA[Moyen (2%)]]></fr><es><![CDATA[Media (2%)]]></es><it><![CDATA[Media (2%)]]></it><pl><![CDATA[Średnia (2%)]]></pl></text>
         <text name="tm_taxrate_3"><en><![CDATA[High (3%)]]></en><de><![CDATA[Hoch (3%)]]></de><fr><![CDATA[Élevé (3%)]]></fr><es><![CDATA[Alta (3%)]]></es><it><![CDATA[Alta (3%)]]></it><pl><![CDATA[Wysoka (3%)]]></pl></text>
 
-        <!-- Return Percentage -->
+        <!-- Annual Tax Rate -->
+        <text name="tm_annualrate_short">
+            <en><![CDATA[Annual Tax Rate]]></en>
+            <de><![CDATA[Jährlicher Steuersatz]]></de>
+            <fr><![CDATA[Taux d'imposition annuel]]></fr>
+            <es><![CDATA[Tasa impositiva anual]]></es>
+            <it><![CDATA[Aliquota fiscale annuale]]></it>
+            <pl><![CDATA[Roczna stawka podatkowa]]></pl>
+        </text>
+        <text name="tm_annualrate_long">
+            <en><![CDATA[Percentage of accumulated taxes paid each March: Low=2%, Medium=5%, High=10%]]></en>
+            <de><![CDATA[Prozentsatz der angesammelten Steuern, der jeden März gezahlt wird: Niedrig=2%, Mittel=5%, Hoch=10%]]></de>
+            <fr><![CDATA[Pourcentage des taxes accumulées payées chaque mars: Faible=2%, Moyen=5%, Élevé=10%]]></fr>
+            <es><![CDATA[Porcentaje de impuestos acumulados pagados cada marzo: Baja=2%, Media=5%, Alta=10%]]></es>
+            <it><![CDATA[Percentuale delle tasse accumulate pagate ogni marzo: Bassa=2%, Media=5%, Alta=10%]]></it>
+            <pl><![CDATA[Procent zgromadzonych podatków płaconych każdego marca: Niski=2%, Średni=5%, Wysoki=10%]]></pl>
+        </text>
+        <text name="tm_annualrate_1"><en><![CDATA[Low (2%)]]></en><de><![CDATA[Niedrig (2%)]]></de><fr><![CDATA[Faible (2%)]]></fr><es><![CDATA[Baja (2%)]]></es><it><![CDATA[Bassa (2%)]]></it><pl><![CDATA[Niski (2%)]]></pl></text>
+        <text name="tm_annualrate_2"><en><![CDATA[Medium (5%)]]></en><de><![CDATA[Mittel (5%)]]></de><fr><![CDATA[Moyen (5%)]]></fr><es><![CDATA[Media (5%)]]></es><it><![CDATA[Media (5%)]]></it><pl><![CDATA[Średni (5%)]]></pl></text>
+        <text name="tm_annualrate_3"><en><![CDATA[High (10%)]]></en><de><![CDATA[Hoch (10%)]]></de><fr><![CDATA[Élevé (10%)]]></fr><es><![CDATA[Alta (10%)]]></es><it><![CDATA[Alta (10%)]]></it><pl><![CDATA[Wysoki (10%)]]></pl></text>
+
+        <!-- Return Percentage (kept for save compatibility) -->
         <text name="tm_return_short">
             <en><![CDATA[Tax Return %]]></en>
             <de><![CDATA[Steuerrückerstattung %]]></de>
