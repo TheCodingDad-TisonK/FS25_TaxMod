@@ -433,9 +433,25 @@ local function onLoad(mission)
             if ok and id then
                 FS25TaxMod.toggleHUDEventId = id
                 g_inputBinding:setActionEventTextPriority(id, GS_PRIO_NORMAL)
-                log("HUD toggle (T) registered", 2)
+
+                -- Read the actual bound key name so TaxHUD can display it dynamically.
+                -- Wrapped in pcall — internal InputBinding structure may vary by game version.
+                FS25TaxMod.toggleHUDKeyLabel = "T"  -- default
+                pcall(function()
+                    local action = g_inputBinding.nameActions
+                        and g_inputBinding.nameActions["TM_TOGGLE_HUD"]
+                    if action and action.bindings and action.bindings[1] then
+                        local raw = action.bindings[1].inputName or ""
+                        local label = raw:gsub("^KEY_", ""):upper()
+                        if label ~= "" then
+                            FS25TaxMod.toggleHUDKeyLabel = label
+                        end
+                    end
+                end)
+
+                log("HUD toggle (" .. FS25TaxMod.toggleHUDKeyLabel .. ") registered", 2)
             else
-                log("HUD toggle (T) registration failed", 1)
+                log("HUD toggle registration failed", 1)
             end
             g_inputBinding:endActionEventsModification()
         end
