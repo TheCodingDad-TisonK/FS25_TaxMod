@@ -584,8 +584,7 @@ function TaxHUD:drawPanel()
     if self.editMode then
         renderText(x + w * 0.5, cy - tsSmall, tsSmall, "Drag: move   Corner: resize   RMB: done")
     else
-        local keyLabel = (self.taxMod and self.taxMod.toggleHUDKeyLabel) or "T"
-        renderText(x + w * 0.5, cy - tsSmall, tsSmall, keyLabel .. ": toggle HUD   RMB: move/resize")
+        renderText(x + w * 0.5, cy - tsSmall, tsSmall, "Toggle HUD   RMB: move/resize")
     end
 
     -- Reset text state
