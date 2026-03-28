@@ -86,6 +86,8 @@ function TaxHUD.new(taxMod)
         AMOUNT_NEG   = {0.90, 0.35, 0.35, 1.00},   -- red for taxes deducted
         AMOUNT_POS   = {0.35, 0.90, 0.35, 1.00},   -- green for returns
         RATE         = {0.90, 0.78, 0.30, 1.00},   -- yellow for rate info
+        PROJECTED    = {0.90, 0.55, 0.15, 1.00},   -- orange for projected payment
+        NEXT_ADV     = {0.35, 0.65, 1.00, 1.00},   -- blue for next advisory
         HINT         = {0.52, 0.52, 0.52, 0.75},
         EDIT_BORDER  = {1.00, 0.60, 0.10, 0.90},
         EDIT_HANDLE  = {1.00, 0.70, 0.20, 0.85},
@@ -379,8 +381,8 @@ function TaxHUD:drawPanel()
 
     local histCount = math.min(#self.taxHistory, TaxHUD.MAX_HISTORY_ROWS)
 
-    -- Row count: title + divider-gap + rate + next-tax + this-month + divider-gap + history-header + hist rows + divider-gap + hint
-    local nRows = 7 + math.max(histCount - 1, 0)
+    -- Row count: title + rate + min-balance + annual-accumulated + projected + next-event + totals(2) + history header + hist rows + hint
+    local nRows = 8 + math.max(histCount - 1, 0)
     local nDividers = 3
     local bgH = pad * 2 + nRows * lh + nDividers * (0.004 * sc)
     local bgX = x - pad
@@ -456,24 +458,64 @@ function TaxHUD:drawPanel()
 
     setTextAlignment(RenderText.ALIGN_RIGHT)
     setTextColor(self.COLORS.AMOUNT_POS[1], self.COLORS.AMOUNT_POS[2], self.COLORS.AMOUNT_POS[3], self.COLORS.AMOUNT_POS[4])
-    renderText(x + w, cy - tsNormal, tsNormal, "Return: " .. settings.returnPercentage .. "%")
-    cy = cy - lh
-
-    -- ── This month so far ─────────────────────────────────
-    local thisMonthFmt = self:formatMoney(stats.taxesThisMonth)
-    setTextAlignment(RenderText.ALIGN_LEFT)
-    setTextColor(self.COLORS.LABEL[1], self.COLORS.LABEL[2], self.COLORS.LABEL[3], self.COLORS.LABEL[4])
-    renderText(x, cy - tsSmall, tsSmall, "This month:")
-
-    setTextAlignment(RenderText.ALIGN_RIGHT)
-    setTextColor(self.COLORS.AMOUNT_NEG[1], self.COLORS.AMOUNT_NEG[2], self.COLORS.AMOUNT_NEG[3], self.COLORS.AMOUNT_NEG[4])
-    renderText(x + w, cy - tsSmall, tsSmall, "-" .. thisMonthFmt)
+    renderText(x + w, cy - tsNormal, tsNormal, "Annual Rate: " .. (taxMod.settings.annualTaxRate * 100) .. "%") -- Display annual rate
     cy = cy - lh
 
     -- ── Min balance ───────────────────────────────────────
     setTextAlignment(RenderText.ALIGN_LEFT)
     setTextColor(self.COLORS.DIM[1], self.COLORS.DIM[2], self.COLORS.DIM[3], self.COLORS.DIM[4])
     renderText(x, cy - tsSmall, tsSmall, "Min balance: " .. self:formatMoney(settings.minimumBalance))
+    cy = cy - lh
+
+    -- ── Annual accumulated tax ────────────────────────────
+    local annualAccumulatedFmt = self:formatMoney(stats.taxesAccumulatedAnnual)
+    setTextAlignment(RenderText.ALIGN_LEFT)
+    setTextColor(self.COLORS.LABEL[1], self.COLORS.LABEL[2], self.COLORS.LABEL[3], self.COLORS.LABEL[4])
+    renderText(x, cy - tsSmall, tsSmall, "Annual accumulated:")
+
+    setTextAlignment(RenderText.ALIGN_RIGHT)
+    setTextColor(self.COLORS.AMOUNT_NEG[1], self.COLORS.AMOUNT_NEG[2], self.COLORS.AMOUNT_NEG[3], self.COLORS.AMOUNT_NEG[4])
+    renderText(x + w, cy - tsSmall, tsSmall, annualAccumulatedFmt)
+    cy = cy - lh
+
+    -- ── Projected annual payment ──────────────────────────
+    local projectedTax = math.floor((stats.taxesAccumulatedAnnual or 0) * (settings.annualTaxRate or 0.05))
+    setTextAlignment(RenderText.ALIGN_LEFT)
+    setTextColor(self.COLORS.LABEL[1], self.COLORS.LABEL[2], self.COLORS.LABEL[3], self.COLORS.LABEL[4])
+    renderText(x, cy - tsSmall, tsSmall, "Est. March payment:")
+    setTextAlignment(RenderText.ALIGN_RIGHT)
+    setTextColor(self.COLORS.PROJECTED[1], self.COLORS.PROJECTED[2], self.COLORS.PROJECTED[3], self.COLORS.PROJECTED[4])
+    renderText(x + w, cy - tsSmall, tsSmall, "-" .. self:formatMoney(projectedTax))
+    cy = cy - lh
+
+    -- ── Next tax event countdown ───────────────────────────
+    local env = g_currentMission and g_currentMission.environment
+    local currentMonth = env and env.currentMonth or 1
+    local advisoryMonth = (taxMod.stats and taxMod.stats.taxAdvisoryMonth) or 12
+    local returnMonth   = (taxMod.stats and taxMod.stats.taxReturnMonth)   or 3
+    local function monthsUntil(target, current)
+        local d = target - current
+        if d <= 0 then d = d + 12 end
+        return d
+    end
+    local mToAdvisory = monthsUntil(advisoryMonth, currentMonth)
+    local mToPayment  = monthsUntil(returnMonth,   currentMonth)
+    local nextLabel, nextVal, nextColor
+    if mToPayment <= mToAdvisory then
+        nextLabel = "Next: Tax payment"
+        nextVal   = mToPayment == 1 and "Next month!" or (mToPayment .. " months")
+        nextColor = self.COLORS.AMOUNT_NEG
+    else
+        nextLabel = "Next: Advisory"
+        nextVal   = mToAdvisory == 1 and "Next month!" or (mToAdvisory .. " months")
+        nextColor = self.COLORS.NEXT_ADV
+    end
+    setTextAlignment(RenderText.ALIGN_LEFT)
+    setTextColor(self.COLORS.DIM[1], self.COLORS.DIM[2], self.COLORS.DIM[3], self.COLORS.DIM[4])
+    renderText(x, cy - tsSmall, tsSmall, nextLabel .. ":")
+    setTextAlignment(RenderText.ALIGN_RIGHT)
+    setTextColor(nextColor[1], nextColor[2], nextColor[3], nextColor[4])
+    renderText(x + w, cy - tsSmall, tsSmall, nextVal)
     cy = cy - lh
 
     -- ── Totals ────────────────────────────────────────────
