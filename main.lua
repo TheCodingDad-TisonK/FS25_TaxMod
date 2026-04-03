@@ -433,9 +433,10 @@ local function onLoad(mission)
             if ok and id then
                 FS25TaxMod.toggleHUDEventId = id
                 g_inputBinding:setActionEventTextPriority(id, GS_PRIO_NORMAL)
-                log("HUD toggle (T) registered", 2)
+
+                log("HUD toggle registered", 2)
             else
-                log("HUD toggle (T) registration failed", 1)
+                log("HUD toggle registration failed", 1)
             end
             g_inputBinding:endActionEventsModification()
         end

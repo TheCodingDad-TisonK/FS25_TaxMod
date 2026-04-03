@@ -135,6 +135,7 @@ Funkcje:
             <es><![CDATA[Mod de Impuestos]]></es>
             <it><![CDATA[Mod Fiscale]]></it>
             <pl><![CDATA[Mod Podatkowy]]></pl>
+            <uk><![CDATA[Мод оподаткування]]></uk>
         </text>
 
         <!-- Enable -->
@@ -145,6 +146,7 @@ Funkcje:
             <es><![CDATA[Activar Mod de Impuestos]]></es>
             <it><![CDATA[Attiva Mod Fiscale]]></it>
             <pl><![CDATA[Włącz Mod Podatkowy]]></pl>
+            <uk><![CDATA[Увімкнути мод оподаткування]]></uk>
         </text>
         <text name="tm_enabled_long">
             <en><![CDATA[Enable or disable daily tax deductions and monthly returns]]></en>
@@ -153,6 +155,7 @@ Funkcje:
             <es><![CDATA[Activar o desactivar las deducciones fiscales diarias y las devoluciones mensuales]]></es>
             <it><![CDATA[Attiva o disattiva le detrazioni fiscali giornaliere e i rimborsi mensili]]></it>
             <pl><![CDATA[Włącz lub wyłącz codzienne odliczenia podatkowe i miesięczne zwroty]]></pl>
+            <uk><![CDATA[Увімкнути або вимкнути щоденні відрахування та щомісячне повернення податків]]></uk>
         </text>
 
         <!-- Tax Rate -->
@@ -163,6 +166,7 @@ Funkcje:
             <es><![CDATA[Tasa impositiva]]></es>
             <it><![CDATA[Aliquota fiscale]]></it>
             <pl><![CDATA[Stawka podatkowa]]></pl>
+            <uk><![CDATA[Ставка податку]]></uk>
         </text>
         <text name="tm_taxrate_long">
             <en><![CDATA[Daily tax rate applied to your farm balance: Low=1%, Medium=2%, High=3%]]></en>
@@ -171,10 +175,11 @@ Funkcje:
             <es><![CDATA[Tasa impositiva diaria sobre el saldo de tu granja: Baja=1%, Media=2%, Alta=3%]]></es>
             <it><![CDATA[Aliquota fiscale giornaliera sul saldo della fattoria: Bassa=1%, Media=2%, Alta=3%]]></it>
             <pl><![CDATA[Dzienna stawka podatkowa od salda farmy: Niska=1%, Średnia=2%, Wysoka=3%]]></pl>
+            <uk><![CDATA[Щоденна ставка податку від балансу ферми: Низька=1%, Середня=2%, Висока=3%]]></uk>
         </text>
-        <text name="tm_taxrate_1"><en><![CDATA[Low (1%)]]></en><de><![CDATA[Niedrig (1%)]]></de><fr><![CDATA[Faible (1%)]]></fr><es><![CDATA[Baja (1%)]]></es><it><![CDATA[Bassa (1%)]]></it><pl><![CDATA[Niska (1%)]]></pl></text>
-        <text name="tm_taxrate_2"><en><![CDATA[Medium (2%)]]></en><de><![CDATA[Mittel (2%)]]></de><fr><![CDATA[Moyen (2%)]]></fr><es><![CDATA[Media (2%)]]></es><it><![CDATA[Media (2%)]]></it><pl><![CDATA[Średnia (2%)]]></pl></text>
-        <text name="tm_taxrate_3"><en><![CDATA[High (3%)]]></en><de><![CDATA[Hoch (3%)]]></de><fr><![CDATA[Élevé (3%)]]></fr><es><![CDATA[Alta (3%)]]></es><it><![CDATA[Alta (3%)]]></it><pl><![CDATA[Wysoka (3%)]]></pl></text>
+        <text name="tm_taxrate_1"><en><![CDATA[Low (1%)]]></en><de><![CDATA[Niedrig (1%)]]></de><fr><![CDATA[Faible (1%)]]></fr><es><![CDATA[Baja (1%)]]></es><it><![CDATA[Bassa (1%)]]></it><pl><![CDATA[Niska (1%)]]></pl><uk><![CDATA[Низька (1%)]]></uk></text>
+        <text name="tm_taxrate_2"><en><![CDATA[Medium (2%)]]></en><de><![CDATA[Mittel (2%)]]></de><fr><![CDATA[Moyen (2%)]]></fr><es><![CDATA[Media (2%)]]></es><it><![CDATA[Media (2%)]]></it><pl><![CDATA[Średnia (2%)]]></pl><uk><![CDATA[Середня (2%)]]></uk></text>
+        <text name="tm_taxrate_3"><en><![CDATA[High (3%)]]></en><de><![CDATA[Hoch (3%)]]></de><fr><![CDATA[Élevé (3%)]]></fr><es><![CDATA[Alta (3%)]]></es><it><![CDATA[Alta (3%)]]></it><pl><![CDATA[Wysoka (3%)]]></pl><uk><![CDATA[Висока (3%)]]></uk></text>
 
         <!-- Annual Tax Rate -->
         <text name="tm_annualrate_short">
@@ -184,6 +189,7 @@ Funkcje:
             <es><![CDATA[Tasa impositiva anual]]></es>
             <it><![CDATA[Aliquota fiscale annuale]]></it>
             <pl><![CDATA[Roczna stawka podatkowa]]></pl>
+            <uk><![CDATA[Річна ставка податку]]></uk>
         </text>
         <text name="tm_annualrate_long">
             <en><![CDATA[Percentage of accumulated taxes paid each March: Low=2%, Medium=5%, High=10%]]></en>
@@ -192,10 +198,11 @@ Funkcje:
             <es><![CDATA[Porcentaje de impuestos acumulados pagados cada marzo: Baja=2%, Media=5%, Alta=10%]]></es>
             <it><![CDATA[Percentuale delle tasse accumulate pagate ogni marzo: Bassa=2%, Media=5%, Alta=10%]]></it>
             <pl><![CDATA[Procent zgromadzonych podatków płaconych każdego marca: Niski=2%, Średni=5%, Wysoki=10%]]></pl>
+            <uk><![CDATA[Відсоток накопичених податків, що сплачується кожного березня: Низький=2%, Середній=5%, Високий=10%]]></uk>
         </text>
-        <text name="tm_annualrate_1"><en><![CDATA[Low (2%)]]></en><de><![CDATA[Niedrig (2%)]]></de><fr><![CDATA[Faible (2%)]]></fr><es><![CDATA[Baja (2%)]]></es><it><![CDATA[Bassa (2%)]]></it><pl><![CDATA[Niski (2%)]]></pl></text>
-        <text name="tm_annualrate_2"><en><![CDATA[Medium (5%)]]></en><de><![CDATA[Mittel (5%)]]></de><fr><![CDATA[Moyen (5%)]]></fr><es><![CDATA[Media (5%)]]></es><it><![CDATA[Media (5%)]]></it><pl><![CDATA[Średni (5%)]]></pl></text>
-        <text name="tm_annualrate_3"><en><![CDATA[High (10%)]]></en><de><![CDATA[Hoch (10%)]]></de><fr><![CDATA[Élevé (10%)]]></fr><es><![CDATA[Alta (10%)]]></es><it><![CDATA[Alta (10%)]]></it><pl><![CDATA[Wysoki (10%)]]></pl></text>
+        <text name="tm_annualrate_1"><en><![CDATA[Low (2%)]]></en><de><![CDATA[Niedrig (2%)]]></de><fr><![CDATA[Faible (2%)]]></fr><es><![CDATA[Baja (2%)]]></es><it><![CDATA[Bassa (2%)]]></it><pl><![CDATA[Niski (2%)]]></pl><uk><![CDATA[Низький (2%)]]></uk></text>
+        <text name="tm_annualrate_2"><en><![CDATA[Medium (5%)]]></en><de><![CDATA[Mittel (5%)]]></de><fr><![CDATA[Moyen (5%)]]></fr><es><![CDATA[Media (5%)]]></es><it><![CDATA[Media (5%)]]></it><pl><![CDATA[Średni (5%)]]></pl><uk><![CDATA[Середній (5%)]]></uk></text>
+        <text name="tm_annualrate_3"><en><![CDATA[High (10%)]]></en><de><![CDATA[Hoch (10%)]]></de><fr><![CDATA[Élevé (10%)]]></fr><es><![CDATA[Alta (10%)]]></es><it><![CDATA[Alta (10%)]]></it><pl><![CDATA[Wysoki (10%)]]></pl><uk><![CDATA[Високий (10%)]]></uk></text>
 
         <!-- Return Percentage (kept for save compatibility) -->
         <text name="tm_return_short">
@@ -205,6 +212,7 @@ Funkcje:
             <es><![CDATA[% Devolución de impuestos]]></es>
             <it><![CDATA[% Rimborso fiscale]]></it>
             <pl><![CDATA[% Zwrotu podatku]]></pl>
+            <uk><![CDATA[% Повернення податку]]></uk>
         </text>
         <text name="tm_return_long">
             <en><![CDATA[Percentage of monthly taxes returned at the start of each new month: Low=10%, Medium=20%, High=30%]]></en>
@@ -213,10 +221,11 @@ Funkcje:
             <es><![CDATA[Porcentaje de impuestos mensuales devueltos: Baja=10%, Media=20%, Alta=30%]]></es>
             <it><![CDATA[Percentuale delle tasse mensili rimborsate: Bassa=10%, Media=20%, Alta=30%]]></it>
             <pl><![CDATA[Procent miesięcznych podatków zwracanych: Niski=10%, Średni=20%, Wysoki=30%]]></pl>
+            <uk><![CDATA[Відсоток місячних податків, що повертається на початку місяця: Низький=10%, Середній=20%, Високий=30%]]></uk>
         </text>
-        <text name="tm_return_1"><en><![CDATA[Low (10%)]]></en><de><![CDATA[Niedrig (10%)]]></de><fr><![CDATA[Faible (10%)]]></fr><es><![CDATA[Baja (10%)]]></es><it><![CDATA[Bassa (10%)]]></it><pl><![CDATA[Niski (10%)]]></pl></text>
-        <text name="tm_return_2"><en><![CDATA[Medium (20%)]]></en><de><![CDATA[Mittel (20%)]]></de><fr><![CDATA[Moyen (20%)]]></fr><es><![CDATA[Media (20%)]]></es><it><![CDATA[Media (20%)]]></it><pl><![CDATA[Średni (20%)]]></pl></text>
-        <text name="tm_return_3"><en><![CDATA[High (30%)]]></en><de><![CDATA[Hoch (30%)]]></de><fr><![CDATA[Élevé (30%)]]></fr><es><![CDATA[Alta (30%)]]></es><it><![CDATA[Alta (30%)]]></it><pl><![CDATA[Wysoki (30%)]]></pl></text>
+        <text name="tm_return_1"><en><![CDATA[Low (10%)]]></en><de><![CDATA[Niedrig (10%)]]></de><fr><![CDATA[Faible (10%)]]></fr><es><![CDATA[Baja (10%)]]></es><it><![CDATA[Bassa (10%)]]></it><pl><![CDATA[Niski (10%)]]></pl><uk><![CDATA[Низький (10%)]]></uk></text>
+        <text name="tm_return_2"><en><![CDATA[Medium (20%)]]></en><de><![CDATA[Mittel (20%)]]></de><fr><![CDATA[Moyen (20%)]]></fr><es><![CDATA[Media (20%)]]></es><it><![CDATA[Media (20%)]]></it><pl><![CDATA[Średni (20%)]]></pl><uk><![CDATA[Середній (20%)]]></uk></text>
+        <text name="tm_return_3"><en><![CDATA[High (30%)]]></en><de><![CDATA[Hoch (30%)]]></de><fr><![CDATA[Élevé (30%)]]></fr><es><![CDATA[Alta (30%)]]></es><it><![CDATA[Alta (30%)]]></it><pl><![CDATA[Wysoki (30%)]]></pl><uk><![CDATA[Високий (30%)]]></uk></text>
 
         <!-- Notifications -->
         <text name="tm_notifications_short">
@@ -226,6 +235,7 @@ Funkcje:
             <es><![CDATA[Notificaciones]]></es>
             <it><![CDATA[Notifiche]]></it>
             <pl><![CDATA[Powiadomienia]]></pl>
+            <uk><![CDATA[Сповіщення]]></uk>
         </text>
         <text name="tm_notifications_long">
             <en><![CDATA[Show in-game notifications when taxes are deducted or returns are paid]]></en>
@@ -234,6 +244,7 @@ Funkcje:
             <es><![CDATA[Mostrar notificaciones en el juego cuando se deducen impuestos o se pagan devoluciones]]></es>
             <it><![CDATA[Mostra notifiche in gioco quando vengono detratte le tasse o pagati i rimborsi]]></it>
             <pl><![CDATA[Pokazuj powiadomienia w grze gdy podatki są odliczane lub zwracane]]></pl>
+            <uk><![CDATA[Показувати ігрові сповіщення при відрахуванні податків або поверненні коштів]]></uk>
         </text>
 
         <!-- Show HUD -->
@@ -244,6 +255,7 @@ Funkcje:
             <es><![CDATA[Mostrar HUD de impuestos]]></es>
             <it><![CDATA[Mostra HUD fiscale]]></it>
             <pl><![CDATA[Pokaż HUD podatkowy]]></pl>
+            <uk><![CDATA[Показати HUD податків]]></uk>
         </text>
         <text name="tm_show_hud_long">
             <en><![CDATA[Show the Tax HUD overlay with current rate, statistics and recent activity (toggle with T key)]]></en>
@@ -252,6 +264,7 @@ Funkcje:
             <es><![CDATA[Mostrar el HUD fiscal con la tasa actual, estadísticas y actividad reciente (alternar con T)]]></es>
             <it><![CDATA[Mostra l'HUD fiscale con aliquota corrente, statistiche e attività recente (attiva/disattiva con T)]]></it>
             <pl><![CDATA[Pokaż HUD podatkowy z bieżącą stawką, statystykami i ostatnią aktywnością (przełącz klawiszem T)]]></pl>
+            <uk><![CDATA[Показати HUD накладку з поточною ставкою, статистикою та нещодавньою активністю (перемикати клавішею T)]]></uk>
         </text>
 
         <!-- HUD toggle key binding display name -->
@@ -262,6 +275,7 @@ Funkcje:
             <es><![CDATA[Alternar HUD de impuestos]]></es>
             <it><![CDATA[Attiva/disattiva HUD fiscale]]></it>
             <pl><![CDATA[Przełącz HUD podatkowy]]></pl>
+            <uk><![CDATA[Перемкнути HUD податків]]></uk>
         </text>
     </l10n>
 
