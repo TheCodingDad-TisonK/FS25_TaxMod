@@ -791,5 +791,66 @@
         "tag": "v1.0.0.0"
       }
     ]
+  },
+  {
+    "timestamp": "2026-04-03T12:56:55Z",
+    "total_downloads": 29,
+    "per_release": [
+      {
+        "assets": [
+          {
+            "downloads": 13,
+            "name": "FS25_TaxMod.zip"
+          }
+        ],
+        "published_at": "2026-03-28T08:14:44Z",
+        "tag": "v1.1.3.1"
+      },
+      {
+        "assets": [
+          {
+            "downloads": 1,
+            "name": "FS25_TaxMod.zip"
+          }
+        ],
+        "published_at": "2026-03-28T07:22:35Z",
+        "tag": "v1.1.3.0"
+      },
+      {
+        "assets": [
+          {
+            "downloads": 7,
+            "name": "FS25_TaxMod.zip"
+          }
+        ],
+        "published_at": "2026-03-14T20:14:37Z",
+        "tag": "v1.1.2.0"
+      },
+      {
+        "assets": [
+          {
+            "downloads": 0,
+            "name": "FS25_TaxMod.zip"
+          }
+        ],
+        "published_at": "2026-03-14T19:56:06Z",
+        "tag": "v1.1.1.0"
+      },
+      {
+        "assets": [
+          {
+            "downloads": 8,
+            "name": "FS25_TaxMod.zip"
+          }
+        ],
+        "published_at": "2026-03-08T09:36:32Z",
+        "tag": "v1.1.0.0"
+      },
+      {
+        "assets": [],
+        "published_at": "2026-01-24T09:43:52Z",
+        "tag": "v1.0.0.0"
+      }
+    ]
   }
 ]
