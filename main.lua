@@ -31,6 +31,7 @@ source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/RfEscModules.lu
 source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/RfPdaMenuPage.lua")
 source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/RfEscBootstrap.lua")
 source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/RfEscUiDebugger.lua")
+source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/TaxGuideDialog.lua")
 source((TaxModModDirectory or g_currentModDirectory) .. "src/gui/TaxRfPdaGuest.lua")
 
 FS25TaxMod = FS25TaxMod or {}
