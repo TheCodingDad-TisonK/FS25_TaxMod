@@ -344,6 +344,15 @@ function TaxRfPdaGuest.onHide(container)
     restoreStatusBand(container)
 end
 
+--- BUILD 19:15: the Esc Help footer asks whichever module is showing to open its own guide, so
+--- every companion ships and owns its own help instead of borrowing Soil's.
+---@param container table|nil
+function TaxRfPdaGuest.onOpenHelp(container)
+    if TaxGuideDialog ~= nil and type(TaxGuideDialog.show) == "function" then
+        TaxGuideDialog.show()
+    end
+end
+
 function TaxRfPdaGuest.tryRegister()
     if RfEscBootstrap ~= nil then
         if MOD_DIR == nil then
@@ -353,6 +362,12 @@ function TaxRfPdaGuest.tryRegister()
                 profilesXml = MOD_DIR .. "xml/gui/rfEscProfiles.xml",
                 iconPath = "textures/ui/menuIcon.dds",
             })
+            -- BUILD 19:15 (George CLOSED DESIGN 18:55 item 5): load this mod's Field Guide at the
+            -- same moment the door itself loads. A GUI loaded from a mod directory later, once the
+            -- mod's own file system context has closed, fails to open.
+            if TaxGuideDialog ~= nil and type(TaxGuideDialog.register) == "function" then
+                pcall(TaxGuideDialog.register, MOD_DIR)
+            end
             if not doorOk then print("[Tax] TaxRfPdaGuest: WARNING ensureDoor failed (will retry)") end
         end
     end
@@ -368,6 +383,7 @@ function TaxRfPdaGuest.tryRegister()
             isAvailable = function() return getTax() ~= nil end,
             onShow = TaxRfPdaGuest.onShow,
             onHide = TaxRfPdaGuest.onHide,
+            onOpenHelp = TaxRfPdaGuest.onOpenHelp,
         })
         if ok then
             _registered = true
